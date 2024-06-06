@@ -34,7 +34,7 @@ public class WifiInform {
 
         public List<WifiDetail> getRow() {
             if (row == null) {
-                return new ArrayList<>(); // 또는 다른 적절한 초기화 처리
+                return new ArrayList<>();
             }
             return row;        }
 

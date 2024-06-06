@@ -164,7 +164,6 @@ public class Database {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
-            // 리소스 해제
             if (ps != null) {
                 try {
                     ps.close();
@@ -250,7 +249,6 @@ public class Database {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
-            // 리소스 해제
             if (ps != null) {
                 try {
                     ps.close();

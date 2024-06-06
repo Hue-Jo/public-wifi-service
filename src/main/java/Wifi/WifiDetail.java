@@ -23,21 +23,21 @@ public class WifiDetail {
 
 
     public double getDistance(double userlat, double userlnt) {
-        final int R = 6371; // 지구의 반지름 (단위: km)
+        final int R = 6371; // 지구의 반지름
         double latDistance = Math.toRadians(userlat - this.LAT);
         double lntDistance = Math.toRadians(userlnt - this.LNT);
         double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
                 + Math.cos(Math.toRadians(this.LAT)) * Math.cos(Math.toRadians(userlat))
                 * Math.sin(lntDistance / 2) * Math.sin(lntDistance / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        double distance = R * c; // 거리
+        double distance = R * c;
 
         return distance;
     }
     public String formatDistance(double userLat, double userLnt) {
-        // DecimalFormat 객체 생성
+
         DecimalFormat df = new DecimalFormat("#.####");
-        // 소수점 네 번째 자리까지 포맷팅하여 반환
+        // 소수점 네 번째 자리까지
         return df.format(getDistance(userLat, userLnt));
     }
     public String getX_SWIFI_MGR_NO() {
